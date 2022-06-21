@@ -9,15 +9,6 @@
 # Uso: 
 # ---------------------------------
 
-lista_1=~/Downloads/*
-
-
-for i in ${lista_1[@]}; do
-j=${i##*/}
-[[ $i =~ (nota-fiscal)+.+(\.pdf) ]] &&  mv -f ~/Downloads/"$j" ~/Documents/Blueshift/"Notas Fiscais/PDF/$j"
-[[ $i =~ (nota-fiscal)+.+(\.xml) ]] &&  mv -f ~/Downloads/"$j" ~/Documents/Blueshift/"Notas Fiscais/XML/$j"
-done
-
 lista_2=~/Downloads/*
 
 
