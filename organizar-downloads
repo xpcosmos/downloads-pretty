@@ -1,0 +1,43 @@
+#!/bin/bash
+
+
+# ---------------------------------
+# Script: organizar-downloads
+# Autor: Mikeias oliveira <mikeias.d.s.o@gmail.com>
+# Versão: 0.1
+# ---------------------------------
+# Uso: 
+# ---------------------------------
+
+lista_1=~/Downloads/*
+
+
+for i in ${lista_1[@]}; do
+j=${i##*/}
+[[ $i =~ (nota-fiscal)+.+(\.pdf) ]] &&  mv -f ~/Downloads/"$j" ~/Documents/Blueshift/"Notas Fiscais/PDF/$j"
+[[ $i =~ (nota-fiscal)+.+(\.xml) ]] &&  mv -f ~/Downloads/"$j" ~/Documents/Blueshift/"Notas Fiscais/XML/$j"
+done
+
+lista_2=~/Downloads/*
+
+
+for i in ${lista_2[@]}; do
+j=${i##*/}
+[[ $i =~ (.zip) || $i =~ (.rar) ]] && mv -f ~/Downloads/"$j" ~/Downloads/"08 - WinRAR/$j"
+[[ $i =~ (.docx) || $i =~ (.doc) ]] && mv -f ~/Downloads/"$j" ~/Downloads/"01 - Docx/$j"
+[[ $i =~ (.xlsx) || $i =~ (.csv) ]] && mv -f ~/Downloads/"$j" ~/Downloads/"04 - Planilhas/$j"
+[[ $i =~ (.pptx) ]] && mv -f ~/Downloads/"$j" ~/Downloads/"05 - PowerPoint/$j"
+[[ $i =~ (.py) ]] && mv -f ~/Downloads/"$j" ~/Downloads/"06 - Python/$j"
+[[ $i =~ (.pdf) ]] &&  mv -f ~/Downloads/"$j" ~/Downloads/"03 - PDF/$j"
+[[ $i =~ (.sql) ]] && mv -f ~/Downloads/"$j" ~/Downloads/"07 - SQL/$j"
+[[ $i =~ (.xml) ]] && mv -f ~/Downloads/"$j" ~/Downloads/"09 - XML/$j"
+[[ $i =~ (.tgz) ]] && mv -f ~/Downloads/"$j" ~/Downloads/"10 - TGZ/$j"
+done
+
+lista_3=~/Downloads/*
+
+for i in ${lista_3[@]}; do
+j=${i##*/}
+[[ ! $i =~ [0-9]{2}+( - ) ]] && mv -f ~/Downloads/"$j" /home/MikeiasOliveira/"Downloads/02 - Outros/$j"
+done
+
