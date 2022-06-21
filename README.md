@@ -21,6 +21,7 @@ O arquivo pode ser baixado executado através do terminal
 
 * Bash-script
 * Linux
+* Python
 
 # Autor
 
