@@ -31,4 +31,3 @@ for i in ${lista_3[@]}; do
 j=${i##*/}
 [[ ! $i =~ [0-9]{2}+( - ) ]] && mv -f ~/Downloads/"$j" /home/MikeiasOliveira/"Downloads/02 - Outros/$j"
 done
-
